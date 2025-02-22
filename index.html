@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Path-Parametric Planning & Control</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<!-- Include MathJax for rendering LaTeX -->
+<script type="text/javascript">
+  MathJax = {
+    tex: {
+      macros: {
+        bm: ["\\boldsymbol{#1}", 1]
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+</script>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">A Universal Formulation<br>for<br> Path-Parametric Planning &
+              Control
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://jonarriza96.github.io/" target="_blank">Jon Arrizabalaga</a><sup>1,3</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.karlin.mff.cuni.cz/~sir/" target="_blank">Zbyněk ŠÍR</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://rexlab.ri.cmu.edu/" target="_blank">Zachary Manchester</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.asg.ed.tum.de/aas/startseite/" target="_blank">Markus Ryll</a><sup>1</sup>
+              </span>
+            </div>
+
+
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Technical University of Munich, <sup>2</sup>Charles
+                University, <sup>3</sup>Carnegie Mellon University<br>Under Review</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2410.04664" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/jonarriza96/PathParam" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.04664" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="eql-cntrb"><small><br>Updated paper coming soon ... </small></span>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------- Teaser -------------------------------- -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <p>
+          <img src="static/images/uppc_overview_transparent_v2.png" alt="Path-parametric ingredients"
+            class="blend-img-background center-image" style="max-width: 100%; height: auto;" />
+        </p>
+        <br>
+        <p>
+          Path-parametric methods rely on a reference path parameterized by an auxiliary variable, σ. These methods can
+          be
+          classified based on two key aspects: the system states and the navigation criterion (as indicated by the white
+          boxes).
+          However, the literature on parametric methods remains fragmented, with existing approaches often presented in
+          isolation.
+          To unify these methods, we introduce a universal formulation that highlights their underlying connections.
+          This
+          formulation consists of two main components (shown in the yellow box): (i) a path-parameterization technique
+          for
+          computing moving frames, and (ii) a spatial projection of the Cartesian system dynamics onto the parametric
+          path,
+          formulated without imposing prior assumptions on the moving frame.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------ Abstract ------------------------------- -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We present a unified framework for path-parametric planning and control. This formulation is universal as
+              it
+              standardizes the entire spectrum of path-parametric techniques -- from traditional path following to more
+              recent
+              contouring or progress-maximizing Model Predictive Control and Reinforcement Learning -- under a single
+              framework. The
+              ingredients underlying this universality are twofold: First, we present a compact and efficient technique
+              capable of
+              computing singularity-free, smooth and differentiable moving frames. Second, we derive a spatial path
+              parameterization
+              of the Cartesian coordinates for any arbitrary curve without prior assumptions on its parametric speed or
+              moving frame,
+              and that perfectly interplays with the aforementioned path parameterization method. The combination of
+              these two
+              ingredients leads to a planning and control framework that unites existing path-parametric techniques in
+              literature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- ------------------------- After abstract GIFs ------------------------- -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1" style="display: grid; place-items: center;">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <source src="static/videos/disturbance.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Why Path-Parametric methods?<br>Temporal vs Spatial references</b>
+            </h2>
+          </div>
+          <div class="item item-video2" style="display: grid; place-items: center;">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <source src="static/videos/racing.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Minimizing Time or Maximizing Progress?</b>
+            </h2>
+          </div>
+          <div class="item item-video3" style="display: grid; place-items: center;">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <source src="static/videos/differentiable_corridors.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Continuous and differentiable spatial representations</b>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --------- Bringing together all path-parametric formulations ---------- -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Bringing together all path-parametric formulations</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper aims to demonstrate the unified nature of path-parametric planning and control methods. We
+            show how these
+            approaches are inherently linked by introducing a universal formulation. Central to this formulation are
+            two fundamental
+            components that underpin all existing works in the literature. These components are: (i) the method of
+            path
+            parameterization, which assigns a singularity-free and continuous moving frame to a give curve,
+            and (ii)
+            the
+            representation of
+            system dynamics relative to this path parameterization, crucial for describing how the system behaves
+            along the
+            specified path.
+          </p>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- Your image here -->
+            <!-- <br> -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/spatial_coordinates.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <br>
+              We introduce a unified framework for path-parametric planning and control, offering a universal
+              formulation that standardizes the full spectrum of path-parametric methodologies. These methodologies are
+              characterized by
+              projecting the three-dimensional Cartesian coordinates <span>\(\boldsymbol{p}^W\)</span>, represented by
+              the pink dot, onto the <em>spatial coordinates</em>, namely the progress along the path
+              <span>\(\xi\)</span> and the orthogonal distance to it <span>\(\boldsymbol{\eta} = \left[\eta_1,
+                \eta_2\right]\)</span>. The universality of the presented framework is rooted in two key
+              <b>ingredients</b> (see next).
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/ingredient1.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b>Ingredient 1</b>: A path-parameterization technique to compute a moving
+              frame that is singularity-free and continuous, so that it is compatible with gradient-based optimization
+              and learning routines.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <img src="static/images/ingredient2_v3.png" alt="MY ALT TEXT" />
+            <h2 class="subtitle has-text-centered">
+              <b>Ingredient 2</b>: A spatial projection of the Cartesian system dynamics onto the parametric path,
+              without any
+              prior
+              assumptions about the moving frame.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------- Why Path-Parametric ------------------------- -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Why Path-Parametric? A robotic manipulator case-study</h2>
+        <div class="content has-text-justified">
+          <p>
+            To highlight the appeal, practicality and universality of the presented path-parametric framework in
+            designing planning
+            and control
+            algorithms, our
+            analysis is structured into three parts. First, we explore the foundational
+            reasons that
+            led to the development of path-parametric methods by comparing temporal and spatial references. Second,
+            we demonstrate how path parametric methods allow for intricate motions, such as convergence to a path while
+            achieving a predefined velocity profile. Third, we show how
+            these core ideas extend to
+            broader motion
+            planning scenarios, where the desired trajectories are intended to fully exploit the available free space.
+          </p>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1" style="display: grid; place-items: center;">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/disturbance.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Example 1 - Temporal vs Spatial reference</b>: Comparison between a temporal and spatial
+              reference-tracking for a two joint robotic
+              manipulator when traversing a sinusoidal
+              path. The right side depicts three successive sequences for motions of the robotic manipulator in a
+              nominal scenario,
+              without disturbances. In the right, we show the trajectories obtained with both methods in the presence of
+              a
+              disturbance. In the left, the temporal reference keeps on progressing while the disturbance is happening,
+              forcing it to
+              catch-up, resulting in a large deviation. In comparison, the spatial reference only depends on
+              its location,
+              and thus, is able to resume without generating a large error.
+            </h2>
+          </div>
+          <div class="item item-video2" style="display: grid; place-items: center;">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/v_profile.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Example 2 - Convergence to path and velocity profile</b>: End-effector motions of a two-link robotic
+              manipulator computed with an
+              optimization-based path-following approach,
+              trading off between orthogonal convergence to the path and achieving a predefined velocity profile.
+              Trajectories are
+              color-coded by initial conditions. The plot on the right shows traversal velocities, with desired
+              reference velocities
+              as dashed lines.
+            </h2>
+          </div>
+          <div class="item item-video3" style="display: grid; place-items: center;">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/deviations.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Example 3 - Motion Planning</b>: End-effector motions of a two-link robotic manipulator traversing a
+              reference path
+              within a corridor, representing the
+              admissible deviation region, color-coded by velocity norm. On the right, from top to bottom: orthogonal
+              spatial
+              coordinate, end-effector velocity components, and joint angle velocities and accelerations, with bounds
+              shown as black
+              dashed lines.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------- Time Minimization vs Progress Maximization -------------- -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Minimizing Time or Maximizing Progress ?</h2>
+        <div class="content has-text-justified">
+          <p>
+            After exploring the fundamental advantages that have propelled the rise of the path-parametric paradigm, we
+            shift our
+            focus to one of its most notable applications: time-optimal navigation. Progress maximization has emerged as
+            a leading approach for minimum-time motion control. Driven by
+            advancements in numerical optimization and embedded solvers, progress maximization based prediction-based
+            controllers
+            have shown very promising results in real-world applications. These controllers
+            are built on path-parametric methods, allowing systems to operate near their performance limits and achieve
+            behavior
+            that closely approximates time-optimality. Additionally, these formulations leverage the capacity to easily
+            impose
+            collision-free constraints, which would otherwise be non-convex or difficult to enforce without the
+            path-parametric
+            structure. The combination of these attributes has made progress maximization the
+            preferred
+            approach for achieving agile performance along a designated reference path. However, while progress
+            maximization serves
+            as an approximation to time minimization, the precise quantification of the gap between these two methods
+            remains
+            unresolved. In this study, we aim to shed some light on this question by performing an experimental
+            comparison of both
+            approaches.
+          </p>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1" style="display: grid; place-items: center;">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/nominal.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Nominal - No model mismatch</b>: We start by comparing both controllers in the ideal case, i.e., when
+              the model used by the
+              controller perfectly matches
+              the real system. The animations show the trajectories obtained by both controllers: time minimization at
+              the
+              left,
+              progress maximization at the right.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/tire_mismatch.png" alt="MY ALT TEXT" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b>Tire mismatch</b>: We introduce a mismatch in the front and rear tire models by
+              reducing the maximum lateral force that they can provide.
+            </h2>
+          </div>
+          <div class="item item-video2" style="display: grid; place-items: center;">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/oversteer.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Oversteer - Deterministic</b>: For both controllers, the discrepancy between the planned and
+              executed
+              trajectories becomes evident during cornering. As
+              previously noted, the commands generated by the controllers are overly aggressive for the available grip
+              on the rear
+              tires, leading to the car drifting (i.e., oversteering).
+            </h2>
+          </div>
+          <div class="item item-video3" style="display: grid; place-items: center;">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/understeer.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <b>Understeer - Deterministic</b>: We introduce a deterministic mismatch in the tire model by
+              reducing the maximum lateral
+              force that the rear tire can provide. In this case, the car is unable to follow the planned trajectory, as
+              the
+              front tires do not provide enough grip, making
+              the car drift towards the outside of the corner.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/detmismatch_laptime_transparent.png" alt="MY ALT TEXT" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b>Deterministic mismatch</b>: In both cases, the minimum-time
+              controller outperforms progress maximization. However, the difference becomes less
+              pronounced as the mismatch increases. On the one hand, the minimum-time controller is pushing the system
+              to its
+              theoretical limit. As the mismatch increases, the gap between the theoretical limit and the real system
+              becomes more
+              significant, leading to a larger discrepancy between the planned and executed trajectories. On the other
+              hand, as
+              mentioned previously, the progress maximization controller’s cost function is a compromise between lag
+              error,
+              regularization and progress maximization, causing the controller to be inherently suboptimal. This
+              suboptimality comes
+              handy as the discrepancy increases, because its commands are not as aggressive.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/stochastic_mismatch.png" alt="MY ALT TEXT" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b>Stochastic mismatch</b>: We have also tested the
+              controllers in the presence of a non-deterministic model mismatch. We have conducted 15 experiments for
+              various standard deviations, ranging from 0.1 to 0.5. The following figure shows
+              the obtained laptimes.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----------------- Differentiable Parametric Corridors ----------------- -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Differentiable Parametric Corridors: A continuous spatial representation</h2>
+        <div class="content has-text-justified">
+          <p>
+            As it is apparent in the previous examples, spatial coordinates derived from path-parametric methods
+            inherently
+            capture the
+            concept of advancement along a path while enabling the imposition of spatial bounds as convex constraints in
+            the
+            orthogonal components of the spatial states. These
+            features make
+            path-parametric methods a compelling toolset for planning and control algorithms in navigation. For
+            instance, in the
+            motion planning example of the robotic manipulator, explicitly
+            representing the
+            admissible region allows the system to efficiently utilize the available space, guiding the end effector
+            along the
+            reference path. Similarly, in the racing scenario, where minimizing time and maximizing progress were
+            compared, an
+            explicit representation of the racetrack enabled controllers to fully exploit the road's width for optimal
+            performance.These examples highlight the potential of parameterizing a system’s motion using spatial
+            coordinates.
+            However, they also
+            raise a critical question: how can one formulate and compute a spatial representation that effectively
+            describes the
+            admissible region around an arbitrary reference path as a function of the orthogonal spatial component,
+            η?
+          </p>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <!-- Your image here -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/corrgen_overview.png" alt="MY ALT TEXT" style="width: 95%; height: auto;" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b>Overview of the method</b>: This method computes differentiable, continuous, and parametric corridors
+              that are fully compatible with the
+              path-parametric framework. By requiring only a parametric path and a point cloud as inputs, it provides a
+              system- and
+              environment-agnostic solution, significantly expanding the applicability of path-parametric methods to
+              real-world
+              scenarios beyond well-defined and controlled environments. The approach is built on three key components:
+              (1) the use
+              of an off-centered ellipse as the corridor's cross-section, (2) the parameterization of the cross-section
+              via Chebyshev
+              polynomials, and (3) the formulation of the corridor volume maximization problem as a lightweight convex
+              optimization
+              task, enabling real-time computation.
+            </h2>
+          </div>
+          <div class="item">
+            <!-- Your image here -->
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/differenitable_corridors.gif" alt="MY ALT TEXT" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b>An autonomous driving example - Overview</b>: Visualization of two 3D
+              path-parametric corridors generated for a challenging KITTI Vision Benchmark
+              scenario with
+              narrow bifurcating lanes, cars, and cyclists.
+            </h2>
+          </div>
+          <div class="item">
+            <div style="display: grid; place-items: center;">
+              <img src="static/images/kitti_second_compressed.png" alt="MY ALT TEXT"
+                style="width: 85%; height: auto;" />
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <br>
+              <b>An autonomous driving example - Analysis</b>: A detailed analysis of the real-world scenario shown in
+              the previous figure. Panel (A) presents a top view of the
+              corridors, generated by incrementally increasing the polynomial degree "n", alongside the corridors
+              obtained
+              by
+              decomposing the free space into "p" convex sets, represented in gray. Panel (B) illustrates the evolution
+              of
+              the
+              corridor volume and computation times as a function of the polynomial degree, for both the SDP and LP
+              problems.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------- Bibtex -------------------------------- -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <!-- <h2 class="title">BibTeX</h2> -->
+      <h2 class="title is-3">BibTex</h2>
+      <pre><code>@article{arrizabalaga2024universal,
+      title={A Universal Formulation for Path-Parametric Planning and Control},
+      author={Arrizabalaga, Jon and Ryll, Markus},
+      journal={arXiv preprint arXiv:2410.04664},
+      year={2024}
+      }
+</code></pre>
+    </div>
+  </section>
+
+
+  <!-- -------------------------- Footer and others -------------------------- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
